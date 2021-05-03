@@ -1,15 +1,20 @@
 pipeline {
-    agent any 
-    
-    tools {
-        maven 'M3'
-        }
-
+    agent any
     stages {
-        stage("Build") {
+        stage('Build') {
             steps {
-                sh 'mvn -B package'
-                }
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
         }
     }
 }
